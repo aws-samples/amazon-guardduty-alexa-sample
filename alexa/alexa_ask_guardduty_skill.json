@@ -1,0 +1,218 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "REGION",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Virginia",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Mumbai",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "London",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ireland",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Seoul",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Tokyo",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Canada",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Sao Paulo",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Singapore",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Sydney",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Frankfurt",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ohio",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "California",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Oregon",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Northern Virginia",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Northern California",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Central",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "SEVNAME",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "low",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "medium",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "high",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "FlashBriefing",
+        "samples": [
+          "FlashBriefing get my flash briefing",
+          "FlashBriefing get flash briefing",
+          "FlashBriefing get global statistics",
+          "FlashBriefing get global stats"
+        ],
+        "slots": []
+      },
+      {
+        "name": "ListFindings",
+        "samples": [
+          "get {SevName} severity findings for {selectedRegion}",
+          "get {SevName} severity findings in {selectedRegion}",
+          "list {SevName} severity findings in {selectedRegion}",
+          "list {SevName} severity findings for {selectedRegion}",
+          "get {SevName} severity findings from {selectedRegion}"
+        ],
+        "slots": [
+          {
+            "name": "selectedRegion",
+            "type": "REGION"
+          },
+          {
+            "name": "SevName",
+            "type": "SEVNAME"
+          }
+        ]
+      },
+      {
+        "name": "ListStats",
+        "samples": [
+          "ListStats get statistics for {selectedRegion}",
+          "ListStats list statistics for {selectedRegion}",
+          "ListStats get stats for {selectedRegion}",
+          "ListStats list stats for {selectedRegion}",
+          "ListStats list stats from {selectedRegion}",
+          "ListStats get statistics from {selectedRegion}"
+        ],
+        "slots": [
+          {
+            "name": "selectedRegion",
+            "type": "REGION"
+          }
+        ]
+      }
+    ],
+    "invocationName": "guard duty"
+  }
+}

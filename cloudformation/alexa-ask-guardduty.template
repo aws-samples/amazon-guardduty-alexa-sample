@@ -1,0 +1,124 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: This template deploys the Lambda Function for the Sample Alexa skill, Ask GuardDuty. **NOTICE** Copyright 2018 Amazon.com, Inc.
+  or its affiliates. All Rights Reserved. Licensed under the Amazon Software License (the License). You may not use
+  this file except in compliance with the License. A copy of the License is located at http://aws.amazon.com/asl/
+  or in the license file accompanying this file. This file is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, express or implied. See the License for the specific language governing permissions and
+  limitations under the License.
+
+
+Parameters:
+  MAXRESP:
+    Default: "5"
+    Description: Maximum number of findings to return. 5-10 recommended due to verbosity.
+    Type: Number
+    AllowedValues: [5,10,15]
+  FLASHREGIONS:
+    Description: Comma separated list of region codes with NO spaces to include in flash briefing stats. Minimum of 1 region required.
+      E.g. "us-east-1,us-west-1,us-west-2" GuardDuty MUST be enabled in declared regions.
+    Type: String
+    AllowedPattern: ^[0-9a-z-,]*$
+  ArtifactsBucket:
+    Description: S3 bucket with artifact files (Lambda functions, templates, html files, etc.). Leave default for N. Virginia.
+    Type: String
+    Default: cgull-artifacts-us-east-1
+    AllowedPattern: ^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$
+    ConstraintDescription: ArtifactsBucket S3 bucket name can include numbers, lowercase letters, uppercase letters, and hyphens (-).
+      It cannot start or end with a hyphen (-).
+  ArtifactsPrefix:
+    Description: Path in the S3 bucket containing artifact files. Leave default for N. Virginia.
+    Type: String
+    Default: public/sample/AlexaAskGuardDuty/
+    AllowedPattern: ^[0-9a-zA-Z-/]*$
+    ConstraintDescription: ArtifactsPrefix key prefix can include numbers, lowercase letters, uppercase letters, hyphens (-),
+      and forward slash (/).
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Alexa Ask GuardDuty Configuration
+        Parameters:
+          - FLASHREGIONS
+          - MAXRESP
+      - Label:
+          default: Artifacts Configuration
+        Parameters:
+          - ArtifactsBucket
+          - ArtifactsPrefix
+
+Resources:
+  AlexaAskGDLambdaSkill:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: "Ask Guard Duty Sample Alexa Skill"
+      Handler : "lambda_function.lambda_handler"
+      MemorySize: 128
+      Timeout: 300
+      Role: !GetAtt AlexaAskGDLambdaRole.Arn
+      Runtime : "python3.6"
+      Environment:
+        Variables:
+          MAXRESP: !Ref MAXRESP
+          FLASHREGIONS: !Ref FLASHREGIONS
+      Code:
+        S3Bucket: !Ref ArtifactsBucket
+        S3Key: !Sub ${ArtifactsPrefix}alexa-ask-guardduty-lambda.zip
+  AlexaAskGDLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "lambda.amazonaws.com"
+            Action:
+              "sts:AssumeRole"
+      Path: "/"
+  AlexaAskGDLambdaPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: "hids_lambda_consumer_policy"
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: "Allow"
+            Action:
+              - "logs:CreateLogGroup"
+              - "logs:CreateLogStream"
+              - "logs:PutLogEvents"
+            Resource: "arn:aws:logs:*:*:*"
+          -
+            Effect: "Allow"
+            Action:
+              - "guardduty:ListDetectors"
+              - "guardduty:ListFindings"
+              - "guardduty:GetFindingsStatistics"
+              - "guardduty:GetFindings"
+            Resource: "*"
+      Roles:
+        -
+          Ref: "AlexaAskGDLambdaRole"
+  AlexaAskGDPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt AlexaAskGDLambdaSkill.Arn
+      Action: lambda:InvokeFunction
+      Principal: 'alexa-appkit.amazon.com'
+
+Outputs:
+  AlexaAskGDSkillArn:
+    Description: Use as endpoint in Amazon developer portal.
+    Value:
+      !GetAtt AlexaAskGDLambdaSkill.Arn
+  AlexaAskGDLambdaSkill:
+    Description: Ask Guard Duty Alexa Skill.
+    Value:
+      Ref: AlexaAskGDLambdaSkill
+  Region:
+    Description: Region of the stack.
+    Value:
+      Ref: AWS::Region
