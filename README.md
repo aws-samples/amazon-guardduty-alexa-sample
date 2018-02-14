@@ -1,5 +1,5 @@
 
-# Sample Alexa GuardDuty Skill
+# Alexa GuardDuty Sample Skill
 
 Introduced at AWS re:Invent 2017, Amazon GuardDuty is a managed threat detection service that continuously monitors for malicious or unauthorized activity to help you protect your AWS accounts and workloads. In this AWS Blog post, Jeff Barr demonstrates how to enable GuardDuty to start monitoring your AWS resources in a single AWS account and describes various GuardDuty features. The follow up AWS Blog post describes how to manage GuardDuty findings across multiple AWS accounts. You may also find it valuable to use Amazon Alexa as a conversational interface to easily obtain information about GuardDuty statistics and findings.
 
