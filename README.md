@@ -18,7 +18,7 @@ Note: A basic understanding of Alexa Custom Skills is helpful for deploying the 
 Solution overview
 The solution diagram below is followed by a description of the flow of events. The CloudFormation template creates the Lambda function for the sample Alexa skill.
 
-## Skill Diagram
+## Solution Diagram
 ![architecture diagram](images/skill-diagram.png)
 
 Here is how the solution works, as shown in the preceding numbered diagram:
