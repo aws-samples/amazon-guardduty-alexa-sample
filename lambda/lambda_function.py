@@ -539,8 +539,8 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
             'title': title,
             'text': cleanout,
             'image': {
-                'smallImageUrl': 'https://s3.amazonaws.com/cgull-static-www/guarddutysmall.png',
-                'largeImageUrl': 'https://s3.amazonaws.com/cgull-static-www/guarddutylarge.png'
+                'smallImageUrl': 'https://s3.amazonaws.com/awsiammedia/public/sample/GuardDutyStatisticsFindings/guarddutysmall.png',
+                'largeImageUrl': 'https://s3.amazonaws.com/awsiammedia/public/sample/GuardDutyStatisticsFindings/guarddutylarge.png'
             }
         },
         'reprompt': {
