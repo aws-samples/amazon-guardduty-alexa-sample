@@ -1,17 +1,9 @@
 
 # Alexa GuardDuty Sample Skill
 
-Introduced at AWS re:Invent 2017, Amazon GuardDuty is a managed threat detection service that continuously monitors for malicious or unauthorized activity to help you protect your AWS accounts and workloads. In this AWS Blog post, Jeff Barr demonstrates how to enable GuardDuty to start monitoring your AWS resources in a single AWS account and describes various GuardDuty features. The follow up AWS Blog post describes how to manage GuardDuty findings across multiple AWS accounts. You may also find it valuable to use Amazon Alexa as a conversational interface to easily obtain information about GuardDuty statistics and findings.
+Deploy a sample custom Alexa skill and use an Alexa-enabled device, such as Amazon Echo to obtain information about GuardDuty findings across your AWS accounts and regions. This will enable you to quickly understand current GuardDuty finding statistics and details through the Alexa voice interface. The information provided by this sample skill is intended to give you a broad overview of GuardDuty finding statistics, severities and descriptions. With this information, you may wish to log into the GuardDuty console or another analysis tool to drill further into the findings data.
 
-Amazon GuardDuty generates findings when it detects unexpected and potentially malicious activity in your AWS environment. You can view and manage your GuardDuty findings on the Findings page in the GuardDuty console or by using the GuardDuty CLI or API operations. In this blog post, I will describe how to use Amazon Alexa as a conversational interface to quickly and easily review your GuardDuty findings.
-
-Alexa is Amazon's cloud-based voice service that is supported on tens of millions of Amazon and other third-party devices. With Alexa, you can build natural voice experiences and a more intuitive way of interacting with the technologies that you use every day.
-
-In this blog post, I will show you how to deploy a sample custom Alexa skill and use an Alexa-enabled device, such as Amazon Echo to obtain information about GuardDuty findings across your AWS accounts and regions. This will enable you to quickly understand current GuardDuty finding statistics and details through the Alexa voice interface. The information provided by this sample skill is intended to give you a broad overview of GuardDuty finding statistics, severities and descriptions. With this information, you may wish to log into the GuardDuty console or another analysis tool to drill further into the findings data.
-
-Before completing the steps for deploying the sample Alexa skill, make sure to confirm your security policies and guidelines. Although the Alexa skill you deploy will not be publically available, any access to an Alexa enabled device should conform to your security requirements.
-
-Note: Although not covered in this blog post, you can also deploy this sample skill using Alexa for Business. Introduced at AWS re:Invent 2017, Alexa for Business allows organizations of all sizes to introduce Alexa to their workplace. With Alexa for Business, you can use the Alexa you know as an intelligent assistant to stay organized and focus on the work that matters. With Alexa for Business you can make skills available to your shared devices and enrolled users without having to publish them to the Alexa skills store.
+Before completing the steps for deploying the sample Alexa skill, make sure to confirm your security policies and guidelines. Although the Alexa skill you deploy will not be publicly available, any access to an Alexa enabled device should conform to your security requirements.
 
 Note: A basic understanding of Alexa Custom Skills is helpful for deploying the sample skill described in this blog post. If you are not already familiar with Alexa custom skill concepts and terminology, you may want to review the following documentation resources.
 
