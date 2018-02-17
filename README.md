@@ -55,16 +55,17 @@ keeping this below 15 is a good idea to avoid Alexa size limit and general sanit
 Comma separated list of region codes with NO spaces to include in flash briefing stats.
 ***Make sure GuardDuty is enabled in regions declared***
 
-## Deployment into Personal Dev Account
+## Deployment into Personal Amazon Developer Account
 
 1. Deploy CloudFormation Template.
-2. Go to [Amazon Dev Console](https://developer.amazon.com/alexa/console)
+2. Go to [Amazon Dev Console](https://developer.amazon.com/alexa/console/ask)
 2.	Click Create Skill.
 3.	For the name, enter Ask Amazon GuardDuty and click Next.
 4. Paste Skill JSON into Skill Builder JSON Editor in **Build**. Save / Build
 5. Get Outputs: AlexaAskGDSkillArn from stack and paste into Lambda endpoint field in skill **Endpoint**. Save
-6. Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration.
-7. Test with Alexa-enabled device.
+6. Test with Alexa-enabled device.
+
+**Note:** Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration. As a best practice, we recommend that you delete the Lambda trigger created by the CloudFormation template and add a new one with Skill ID verification enabled. [Learn more.](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger)
 
 ***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
 
