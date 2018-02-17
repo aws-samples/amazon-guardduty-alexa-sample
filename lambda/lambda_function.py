@@ -345,10 +345,9 @@ def get_help():
                     " You can get GuardDuty finding details by saying for example," \
                     " get high severity findings for California." \
                     " I am currently configured to return up to " + MAXRESP + " findings in a response." \
-                    " Each GuardDuty finding has an assigned severity level and value that reduces the need to prioritize one" \
-                    " finding over another and can help you determine your response to a potential security issue that is " \
-                    " highlighted by a finding. The value of the severity can fall anywhere within the 0.1 to 8.9 range." \
-                    " High severity findings fall within the 7.0 to 8.9 range," \
+                    " Each GuardDuty finding has an assigned severity level and value that can help you determine your  " \
+                    " response to a potential security issue that is highlighted by a finding. The value of the severity " \
+                    " can fall within the 0.1 to 8.9 range. High severity findings fall within the 7.0 to 8.9 range," \
                     " medium severity falls within the 4.0 to 6.9 range and low severity falls within the  0.1 to 3.9 range." \
                     " You can generate samples in the console and GuardDuty will" \
                     " populate your current list with one sample finding for each supported type." \

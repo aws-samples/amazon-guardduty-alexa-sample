@@ -59,10 +59,12 @@ Comma separated list of region codes with NO spaces to include in flash briefing
 
 1. Deploy CloudFormation Template.
 2. Go to [Amazon Dev Console](https://developer.amazon.com/alexa/console)
-3. Paste Skill JSON into Skill Builder JSON Editor in **Build**. Save / Build
-4. Get Outputs: AlexaAskGDSkillArn from stack and paste into Lambda endpoint field in skill **Endpoint**. Save
-5. Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration.
-6. Test with Alexa-enabled device.
+2.	Click Create Skill.
+3.	For the name, enter Ask Amazon GuardDuty and click Next.
+4. Paste Skill JSON into Skill Builder JSON Editor in **Build**. Save / Build
+5. Get Outputs: AlexaAskGDSkillArn from stack and paste into Lambda endpoint field in skill **Endpoint**. Save
+6. Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration.
+7. Test with Alexa-enabled device.
 
 ***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
 
