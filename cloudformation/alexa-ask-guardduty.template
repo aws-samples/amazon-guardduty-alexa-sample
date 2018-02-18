@@ -113,9 +113,8 @@ Outputs:
     Value:
       !GetAtt AlexaAskGDLambdaSkill.Arn
   AlexaAskGDLambdaSkill:
-    Description: Ask Guard Duty Alexa Skill.
-    Value:
-      Ref: AlexaAskGDLambdaSkill
+    Description: Ask GuardDuty Sample Alexa Skill Lambda.
+    Value: !Sub https://console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${AlexaAskGDLambdaSkill}
   Region:
     Description: Region of the stack.
     Value:
