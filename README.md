@@ -25,12 +25,12 @@ In order to complete the steps in this blog post, make sure you have the followi
 1.	An AWS account with GuardDuty enabled in one or more AWS regions.
 2.	An Alexa-enabled device, such as an Amazon Echo.
 3.	An Amazon Developer Account.
-4.	(Optional) An AWS account configured with Alexa for Business.
+4.	(Optional) An AWS account configured with [Alexa for Business](https://aws.amazon.com/alexaforbusiness/).
 
 ## Features
 - Multi-Region support
 - DetectorId auto discovery
-- "Ask GuardDuty to get Flash Briefing" powered by get_findings_statistics. Uses an environment variable with comma separated region ids.
+- "Ask GuardDuty to get Flash Briefing" powered by [get_findings_statistics](http://boto3.readthedocs.io/en/latest/reference/services/guardduty.html#GuardDuty.Client.get_findings_statistics). Uses an environment variable with comma separated region ids.
 - Response provides high / med / low severity labels
 - instance id / ip redaction
 - help
@@ -65,7 +65,7 @@ Comma separated list of region codes with NO spaces to include in flash briefing
 5. Get Outputs: AlexaAskGDSkillArn from stack and paste into Lambda **Default Region** endpoint field in the skill **Endpoint**. Save
 6. Test with Alexa-enabled device.
 
-**Note:** Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration. As a best practice, we recommend that you delete the Lambda trigger created by the CloudFormation template and add a new one with Skill ID verification enabled. [Learn more.](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger) You can also deploy this sample skill using Alexa for business. For more info, check out ***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
+**Note:** Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration. As a best practice, we recommend that you delete the Lambda trigger created by the CloudFormation template and add a new one with Skill ID verification enabled. [Learn more.](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger) You can also deploy this sample skill using Alexa for Business. For more info, check out ***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
 
 
 ## License
