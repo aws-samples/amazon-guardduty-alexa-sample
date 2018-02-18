@@ -32,8 +32,8 @@ In order to complete the steps in this blog post, make sure you have the followi
 - DetectorId auto discovery
 - "Ask GuardDuty to get Flash Briefing" powered by [get_findings_statistics](http://boto3.readthedocs.io/en/latest/reference/services/guardduty.html#GuardDuty.Client.get_findings_statistics). Uses an environment variable with comma separated region ids.
 - Response provides high / med / low severity labels
-- instance id / ip redaction
-- help
+- Instance Id / IP redaction
+- Help
 - Error detection for disabled / regions not configured
 - CloudFormation deployment for Lambda component
 
