@@ -65,9 +65,7 @@ Comma separated list of region codes with NO spaces to include in flash briefing
 5. Get Outputs: AlexaAskGDSkillArn from stack and paste into Lambda endpoint field in skill **Endpoint**. Save
 6. Test with Alexa-enabled device.
 
-**Note:** Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration. As a best practice, we recommend that you delete the Lambda trigger created by the CloudFormation template and add a new one with Skill ID verification enabled. [Learn more.](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger)
-
-***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
+**Note:** Since you are not publishing this skill, you do not need to complete the **Launch** section of the configuration. As a best practice, we recommend that you delete the Lambda trigger created by the CloudFormation template and add a new one with Skill ID verification enabled. [Learn more.](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger) You can also deploy this sample skill using Alexa for business. For more info, check out ***[Alexa for Business Deployment](https://aws.amazon.com/alexaforbusiness/getting-started/)***
 
 
 ## License
