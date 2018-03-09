@@ -218,7 +218,7 @@ def get_flash_briefing(intent, session):
 # Get finding details for region X and severity Y
 def list_findings(intent, session):
     session_attributes = {}
-    card_title = "Amazon GardDuty Finding Details"
+    card_title = "Ask GardDuty Finding Details"
     should_end_session = False
     selected_region = intent['slots']['selectedRegion']['value']
     session_attributes = create_selected_region(selected_region)
