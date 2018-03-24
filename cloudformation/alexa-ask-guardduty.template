@@ -78,7 +78,7 @@ Resources:
   AlexaAskGDLambdaPolicy:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: "hids_lambda_consumer_policy"
+      PolicyName: "askgd_lambda_consumer_policy"
       PolicyDocument:
         Version: 2012-10-17
         Statement:
