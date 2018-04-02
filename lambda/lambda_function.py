@@ -453,6 +453,10 @@ def getstats(region_name):
             DetectorId=detector_id,
             FindingCriteria={
                 'Criterion': {
+                    'service.archived': {
+                            'Eq':
+                            ['false'],
+                        },
                     'severity': {
                             'Gte':
                                 0,
@@ -476,10 +480,14 @@ def listfindings(minsev, region_name):
             DetectorId=detector_id,
             FindingCriteria={
                 'Criterion': {
+                    'service.archived': {
+                            'Eq':
+                            ['false'],
+                        },
                     'severity': {
                             'Gte':
                                 int(minsev),
-                            }
+                        }
                     }
                 },
             MaxResults=int(MAXRESP),
