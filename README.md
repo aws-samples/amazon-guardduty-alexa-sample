@@ -3,7 +3,7 @@
 
 Deploy a sample custom Alexa skill and use an Alexa-enabled device, such as Amazon Echo to obtain information about GuardDuty findings across your AWS accounts and regions. This will enable you to quickly understand current GuardDuty finding statistics and details through the Alexa voice interface. The information provided by this sample skill is intended to give you a broad overview of GuardDuty finding statistics, severities and descriptions. With this information, you may wish to log into the GuardDuty console or another analysis tool to drill further into the findings data.
 
-Note: A basic understanding of Alexa Custom Skills is helpful for deploying the sample skill described in this blog post. If you are not already familiar with Alexa custom skill concepts and terminology, you may want to review the following documentation resources.
+Note: A basic understanding of Alexa Custom Skills is helpful for deploying the sample skill described in this blog post. If you are not already familiar with Alexa custom skill concepts and terminology, you may want to review the [documentation resources](https://developer.amazon.com/docs/custom-skills/understanding-custom-skills.html).
 
 Solution overview
 The solution diagram below is followed by a description of the flow of events. The CloudFormation template creates the Lambda function for the sample Alexa skill.
