@@ -408,6 +408,7 @@ def scruboutput(inputtxt):
     response = re.sub('&', 'and', inputtxt)
     response = re.sub(r'[\[\]\"]', '', response)
     response = re.sub(r'instance i-(\w+)', 'instance', response)
+    response = re.sub(r'i-(\w{1,17}\b)', 'EC2 instance', response)
     response = re.sub(r'against i-(\w+)', 'against an EC2 instance', response)
     response = re.sub(r'([0-9]+)(?:\.[0-9]+){3}', 'IP host', response)
     return response
